@@ -16,6 +16,8 @@ declare module 'rakutenma' {
         constructor(model?: T, phi?: number, c?: number);
 
         set_tag_scheme(scheme: RakutenMA.TagScheme): void;
+        tokenize(input: string): any[];
+        str2csent(input: string): RakutenMA.CharacterSentence;
     }
 
     namespace RakutenMA {
@@ -29,6 +31,7 @@ declare module 'rakutenma' {
         export type CharacterType = 'S' | 'C' | 'H' | 'K' | 'A' | 'a' | 'N' | 'n' | 'O';
         export type CharacterTypeFunction = (str: string) => CharacterType;
         export type Token = { c: 'string', t: CharacterType };
+        export type CharacterSentence = Token[];
 
         export namespace Trie {}
 
